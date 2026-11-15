@@ -1,7 +1,26 @@
-"use client";
+import { headers } from "next/headers";
+import dynamic from "next/dynamic";
 
-import { useEffect, useState } from "react";
-import { Plus, Edit, Trash2, Save, X } from "lucide-react";
+const AdminPanelClient = dynamic(
+  async () => {
+    const { default: AdminPanel } = await import("./AdminPanelClient");
+    return AdminPanel;
+  },
+  { ssr: false }
+);
+
+export default function AdminPage() {
+  const headersList = headers();
+  const host = headersList.get("host") || "";
+  const isLocalhost = host.startsWith("localhost") || host.startsWith("127.0.0.1");
+
+  // Only render admin panel on localhost
+  if (!isLocalhost) {
+    return null; // or redirect, or 404
+  }
+
+  return <AdminPanelClient />;
+}
 
 interface Project {
   id: string;
