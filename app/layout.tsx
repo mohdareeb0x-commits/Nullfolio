@@ -39,6 +39,11 @@ export const metadata: Metadata = {
     title: "Mohd Areeb | Full Stack Developer",
     description: "Self-taught full-stack developer specializing in Go, Python, and modern web technologies.",
   },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
