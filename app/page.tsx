@@ -85,7 +85,7 @@ export default async function Page() {
               </div>
             </div>
 
-            <div className="relative w-full max-w-xs mx-auto md:mx-0">
+            <div className="relative w-full max-w-xs md:ml-auto">
               <div className="aspect-square relative overflow-hidden rounded-sm border border-border bg-surface">
                 <Image
                   src="/profile.jpg"
