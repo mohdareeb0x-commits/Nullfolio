@@ -46,5 +46,5 @@ ehthumbs.db
 Desktop.ini
 
 # images
-public/projects/*
+# public/projects/*
 !public/projects/.gitkeep

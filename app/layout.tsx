@@ -14,6 +14,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://web-builds.vercel.app"),
   title: {
     default: "Mohd Areeb | Full Stack Developer",
     template: "%s | Mohd Areeb",

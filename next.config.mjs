@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Exclude admin routes from production build
   async headers() {
     return [
       {
@@ -13,12 +12,6 @@ const nextConfig = {
         ],
       },
     ];
-  },
-  // Ensure admin routes don't generate static params in production
-  async generateStaticParams() {
-    if (process.env.NODE_ENV === "production") {
-      return [];
-    }
   },
 };
 
