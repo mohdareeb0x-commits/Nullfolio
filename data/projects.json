@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1794762679365",
+    "title": "Marrow Studio",
+    "description": "Marrow Studio is a minimalist marketing website for an independent Indian branding and web design agency, built as a synthesis of editorial design\r\n  sensibility and modern web engineering. The visual language centers on a \"warm mineral\" palette—Bone White backgrounds, Charcoal Slate text, and a\r\n  restrained Terracotta Vermilion accent occupying under 10% of visual weight—paired with a deliberate typographic hierarchy: Instrument Serif for editorial\r\n  headlines, DM Sans for clean body copy, and JetBrains Mono for precise meta-labels. Architected on Next.js 14 with TypeScript and Tailwind CSS, the App\r\n  Router powers a mobile-first, fully responsive experience featuring dynamic project case studies, a work gallery, and a validated contact form backed by\r\n  an API route. Every page includes comprehensive SEO metadata, Open Graph tags, and JSON-LD structured data, while next/image ensures optimized media\r\n  delivery. The codebase targets 90+ scores across all Lighthouse categories—Performance, Accessibility, Best Practices, and SEO—reflecting a commitment to\r\n  technical rigor matching the studio's design standards. The result is a performant, accessible, and visually cohesive digital storefront that communicates\r\n  the agency's expertise through both its content and its craft.",
+    "techStack": [
+      "nextjs",
+      "react",
+      "tailwindcss",
+      "typescript"
+    ],
+    "liveLink": "https://marrowstudio-one.vercel.app",
+    "githubLink": "https://github.com/mohdareeb0x-commits/MarrowStudio",
+    "image": "/projects/1794762679365-Screenshot 2026-11-15 223856.png"
+  }
+]
