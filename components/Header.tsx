@@ -19,7 +19,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <nav className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         <Link href="/" className="font-heading text-lg font-semibold tracking-tight">
-          WEB BUILDS.
+          WE BUILD WEB.
         </Link>
 
         {/* Desktop navigation */}
