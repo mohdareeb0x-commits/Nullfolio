@@ -12,5 +12,20 @@
     "liveLink": "https://marrowstudio-one.vercel.app",
     "githubLink": "https://github.com/mohdareeb0x-commits/MarrowStudio",
     "image": "/projects/1794762679365-Screenshot 2026-11-15 223856.png"
+  },
+  {
+    "id": "1794999400510",
+    "title": "Nilgiri House",
+    "description": "A production-ready marketing and booking-enquiry website for a fictional 6-room boutique hotel in the Nilgiri hills of South India. Built\r\n  as a portfolio piece demonstrating client-handoff-ready websites where non-technical editors control all content through Sanity CMS.\r\n\r\n  Tech Stack: Next.js 14 (App Router), TypeScript, Tailwind CSS 4, Sanity CMS with embedded Studio (/studio), next/image with Sanity CDN,\r\n  React 19.\r\n\r\n  Design System: Editorial travel-magazine aesthetic — full-bleed hero imagery breaking the container grid, alternating text/image\r\n  sections, Fraunces Variable (display) + DM Sans Variable (body), warm terracotta/forest/cream palette, 800ms staggered crossfades, drop\r\n  caps, pull quotes, tabular numerals.\r\n\r\n  Content Architecture: Four Sanity schemas — Room (6 rooms with galleries, amenities, pricing), HomePage (hero, story, featured rooms,\r\n  testimonial, CTA), Testimonial (guest quotes with room references), SiteSettings (singleton for contact, social, SEO, booking config).\r\n  All images support hotspot/crop; Portable Text for rich descriptions.\r\n\r\n  Performance & SEO: next/image with proper sizes, priority loading, blur placeholders (LQIP), variable fonts with display: swap. Dynamic\r\n  metadata, Open Graph/Twitter cards, JSON-LD structured data (LodgingBusiness, HotelRoom, ItemList), auto-generated sitemap.xml and\r\n  robots.txt. Target Lighthouse 90+.\r\n\r\n  Accessibility: WCAG AA contrast, semantic landmarks, focus-visible styles, ARIA labels, alt text on all images, form validation with\r\n  error announcements.\r\n\r\n  Developer Experience: One-time migration script (scripts/migrate-content.mjs) uploads 28 images to Sanity asset store and creates all\r\n  documents idempotently. Mock data fallback for offline development. Zero separate Sanity dev server — Studio embedded at /studio via\r\n  next-sanity.\r\n\r\n  Deployment: Vercel (frontend) + npx sanity deploy (Studio hosted at *.sanity.studio). Environment-driven config via .env.local.",
+    "techStack": [
+      "nextjs",
+      "react",
+      "typescript",
+      "sanity",
+      "tailwindcss"
+    ],
+    "liveLink": "https://nilgirihills.vercel.app/",
+    "githubLink": "https://github.com/mohdareeb0x-commits/NilgiriHills",
+    "image": "/projects/1794999400510-Screenshot 2026-11-18 162622.png"
   }
 ]
