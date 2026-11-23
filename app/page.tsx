@@ -65,9 +65,13 @@ export default async function Page() {
                 Mohd Areeb
               </h1>
               <p className="text-xl text-muted leading-relaxed mb-12 max-w-xl">
-                Self-taught full-stack developer. Backend-leaning (Go, Python,
-                PostgreSQL, MongoDB, Docker), now also architecting mobile
-                experiences with React Native and Expo.
+                An independent web developer helping digital marketing agencies
+                and businesses build high-performing websites, conversion-focused
+                landing pages, and custom web applications. I specialize in
+                Next.js, React, TypeScript, Python, and Go, along with marketing
+                integrations like Google Tag Manager, Meta Pixel, CRM
+                integrations, and API automation. I also provide reliable
+                white-label development support for agencies.
               </p>
               <div className="flex items-center gap-4">
                 <Link

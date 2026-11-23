@@ -30,7 +30,7 @@ export default function ContactPage() {
               <h2 className="font-heading text-xl font-bold mb-8">Contact Details</h2>
               <div className="space-y-6">
                 <a
-                  href="mailto:mohdareeb0x@gmail.com"
+                  href="mailto:areeb.nullfolio@gmail.com"
                   className="group flex items-center gap-4 text-muted hover:text-foreground transition-colors"
                 >
                   <div className="p-3 bg-surface border border-border group-hover:border-accent transition-colors">
@@ -38,7 +38,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest font-bold mb-1">Email</p>
-                    <p className="text-base">mohdareeb0x@gmail.com</p>
+                    <p className="text-base">areeb.nullfolio@gmail.com</p>
                   </div>
                 </a>
 
