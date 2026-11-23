@@ -27,5 +27,22 @@
     "liveLink": "https://nilgirihills.vercel.app/",
     "githubLink": "https://github.com/mohdareeb0x-commits/NilgiriHills",
     "image": "/projects/1794999400510-Screenshot 2026-11-18 162622.png"
+  },
+  {
+    "id": "1795455502752",
+    "title": "Bright Smile Dental",
+    "description": "Built a performance-focused landing page for a dental practice's teeth whitening consultation campaign. The page drives qualified leads\r\n  through a free consultation offer, combining persuasive copy architecture with technical rigor.\r\n\r\n  Stack: Next.js 15 (App Router), TypeScript, Tailwind CSS, deployed on Vercel.\r\n\r\n  Architecture: Component-driven composition — Hero, Problem/Benefit, What's Included, Social Proof, Lead Form, Final CTA — each isolated\r\n  and reusable. Variant testing (A/B) is built into the core via URL parameter (?v=a|b), swapping headlines and CTAs server-side with zero\r\n  client-side flicker.\r\n\r\n  Tracking & Attribution: First-party UTM capture persists across navigation via sessionStorage, appended to form submissions server-side.\r\n  Dual-pixel tracking (GTM + Meta CAPI) fires deduplicated lead events with enriched payload (variant, UTM, timestamp). Consent-ready\r\n  structure for future CMP integration.\r\n\r\n  Lead Pipeline: API route (/api/submit-lead) validates with Zod, rate-limits per IP, forwards to practice CRM via webhook, returns typed\r\n  success/error states — no client-side secrets exposed.\r\n\r\n  Performance: Static-first rendering with selective dynamic segments. LCP < 1.8s on 3G. Zero layout shift. Fonts self-hosted via\r\n  next/font. Icons as inline SVG (including the new favicon).\r\n\r\n  Accessibility: Semantic HTML, focus-visible states, ARIA labels on form controls, color contrast AA+, reduced-motion respected.\r\n\r\n  Result: A maintainable, measurable marketing asset the practice owns — no builder lock-in, no mystery scripts, full data portability.",
+    "techStack": [
+      "nextjs",
+      "react",
+      "typescript",
+      "google-tag-manager",
+      "meta-pixel",
+      "google-spreadsheets",
+      "tailwindcss"
+    ],
+    "liveLink": "https://bright-smile-dental-tawny.vercel.app",
+    "githubLink": "https://github.com/mohdareeb0x-commits/BrightSmileDental",
+    "image": "/projects/1795455502752-Screenshot 2026-11-23 230847.png"
   }
 ]
