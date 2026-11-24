@@ -44,5 +44,20 @@
     "liveLink": "https://bright-smile-dental-tawny.vercel.app",
     "githubLink": "https://github.com/mohdareeb0x-commits/BrightSmileDental",
     "image": "/projects/1795455502752-Screenshot 2026-11-23 230847.png"
+  },
+  {
+    "id": "1795537138575",
+    "title": "Kindred Coffee Roasters",
+    "description": "Kindred Coffee Roasters represents a complete brand-focused redesign and functional transformation of the standard Shopify Dawn theme.\r\n  Rather than a superficial aesthetic change, I built a bespoke e-commerce experience designed to showcase deep Liquid theme development\r\n  and Online Store 2.0 architecture proficiency.\r\n\r\n  The project centered on three core requirements: a tactile, warm aesthetic, robust subscription-based functionality, and modular\r\n  flexibility. I moved away from generic templates to build six custom sections—including a high-converting \"Build Your Own Bundle\"\r\n  builder, a dynamic subscription product page, and a data-driven \"Tasting Notes\" flavor wheel—all fully configurable via the Shopify Theme\r\n  Editor. By integrating dynamic pricing logic, responsive lifestyle-first imagery, and modular blocks, I created a store that functions\r\n  as a professional, scalable ecosystem for specialty coffee.\r\n\r\n  Technically, the project emphasizes performance and maintainability: I utilized optimized Liquid schema settings to prevent hardcoding,\r\n  implemented vanilla JavaScript for lightweight interactive logic, and ensured clean data flow using custom metafields for complex content\r\n  like flavor profiles and brew guides. This portfolio piece demonstrates the ability to solve real-world agency challenges—taking a\r\n  merchant's existing store to the next level through deliberate, purpose-driven development that respects both the brand’s visual identity\r\n  and Shopify’s technical constraints.\r\n\r\n---\r\n\r\n  To view the live theme, enter 'nullfolio' as the store password.",
+    "techStack": [
+      "shopify-liquid",
+      "html",
+      "css",
+      "javascript (vanilla es6)",
+      "shopify-cli"
+    ],
+    "liveLink": "https://kindred-coffee-roasters-ysks2noz.myshopify.com/",
+    "githubLink": "https://github.com/mohdareeb0x-commits/KindredCoffeeRoasters",
+    "image": "/projects/1795537138575-Screenshot 2026-11-24 214415.png"
   }
 ]
