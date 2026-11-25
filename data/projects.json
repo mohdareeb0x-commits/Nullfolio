@@ -59,5 +59,20 @@
     "liveLink": "https://kindred-coffee-roasters-ysks2noz.myshopify.com/",
     "githubLink": "https://github.com/mohdareeb0x-commits/KindredCoffeeRoasters",
     "image": "/projects/1795537138575-Screenshot 2026-11-24 214415.png"
+  },
+  {
+    "id": "1795615840221",
+    "title": "Lumen Salon",
+    "description": "Lumen Salon & Spa is a production-ready Next.js 14 (App Router) + TypeScript + Tailwind CSS portfolio piece demonstrating expertise in\r\n  building conversion-focused local business websites that actually rank and convert. The site is architected around a single goal—driving\r\n  appointment bookings—while layering every local SEO trust signal agencies need: consistent NAP (Name, Address, Phone) across footer,\r\n  contact page, and schema; a complete LocalBusiness JSON-LD with HealthAndBeautyBusiness type, GeoCoordinates, OpeningHoursSpecification,\r\n  and a full OfferCatalog of six services with pricing; Google Maps embed (zero-API-key iframe) and a styled Reviews section mimicking\r\n  Google review cards with static placeholders; and a \"Find us on Google\" CTA pointing to the real GBP. Booking is handled via Cal.com's\r\n  React embed (@calcom/embed-react), lazy-loaded and styled to feel native, with deep-linking from service cards\r\n  (/book?service=haircut-style) so users land directly on the right event type. The design uses a warm ivory/stone palette with sage accent\r\n  and Cormorant Garamond + Inter typography for an upscale-but-approachable boutique feel, fully responsive and mobile-first with sticky\r\n  header CTAs and click-to-call. Technical highlights include: per-page metadata + Open Graph, sitemap.xml/robots.ts generation, dynamic\r\n  header that's transparent only on the home page, 12-hour time formatting for UX while schema retains 24-hour, custom SVG favicon, and\r\n  environment-driven config for Cal.com namespace and Google Business URL so the demo works instantly but connects to real data on deploy.\r\n  Deployed on Vercel with Lighthouse 90+ targets.",
+    "techStack": [
+      "nextjs",
+      "typescript",
+      "tailwindcss",
+      "react",
+      "@calcom/embed-react"
+    ],
+    "liveLink": "https://lumensalon.vercel.app/",
+    "githubLink": "https://github.com/mohdareeb0x-commits/LumenSalon",
+    "image": "/projects/1795615840221-Screenshot 2026-11-25 193719.png"
   }
 ]
