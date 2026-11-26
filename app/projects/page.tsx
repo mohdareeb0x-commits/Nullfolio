@@ -31,12 +31,12 @@ async function getProjects(): Promise<Project[]> {
   }
 }
 
-const projectTypes: Record<string, "Client Work" | "Personal" | "Open Source"> = {
-  "1794762679365": "Client Work",
-  "1794999400510": "Client Work",
-  "1795455502752": "Client Work",
-  "1795537138575": "Client Work",
-  "1795615840221": "Client Work",
+const projectTypes: Record<string, string> = {
+  "1794762679365": "Personal Project",
+  "1794999400510": "Personal Project",
+  "1795455502752": "Personal Project",
+  "1795537138575": "Personal Project",
+  "1795615840221": "Personal Project",
 };
 
 export default async function ProjectsPage() {
@@ -74,8 +74,8 @@ export default async function ProjectsPage() {
                         />
                       )}
                       <div className="absolute top-4 left-4">
-                        <span className="font-mono text-body-xs px-3 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-accent">
-                          {projectTypes[projects[0].id] || "Project"}
+                        <span className="font-mono text-body-xs px-3 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-accent font-medium">
+                          {projectTypes[projects[0].id] || "Personal Project"}
                         </span>
                       </div>
                       <div className="absolute bottom-4 right-4 font-display text-6xl font-bold text-foreground/5" aria-hidden="true">
@@ -154,8 +154,8 @@ export default async function ProjectsPage() {
                             />
                           )}
                           <div className="absolute top-4 left-4">
-                            <span className="font-mono text-body-xs px-3 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-muted">
-                              {projectTypes[project.id] || "Project"}
+                            <span className="font-mono text-body-xs px-3 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-accent font-medium">
+                              {projectTypes[project.id] || "Personal Project"}
                             </span>
                           </div>
                           <div className="absolute bottom-4 right-4 font-display text-6xl font-bold text-foreground/5" aria-hidden="true">

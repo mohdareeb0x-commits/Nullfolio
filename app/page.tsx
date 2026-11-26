@@ -183,8 +183,8 @@ export default async function Page() {
                       )}
                       {/* Project type badge */}
                       <div className="absolute top-4 left-4">
-                        <span className="font-mono text-body-xs px-3 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-accent">
-                          Client Work
+                        <span className="font-mono text-body-xs px-3 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-accent font-medium">
+                          Personal Project
                         </span>
                       </div>
                       {/* Number */}
@@ -255,8 +255,8 @@ export default async function Page() {
                           />
                         )}
                         <div className="absolute top-3 left-3">
-                          <span className="font-mono text-body-xs px-2 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-muted">
-                            {index === 0 ? "Client Work" : "Personal"}
+                          <span className="font-mono text-body-xs px-2 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-accent font-medium">
+                            Personal Project
                           </span>
                         </div>
                         <div className="absolute bottom-3 right-3 font-display text-4xl font-bold text-foreground/5" aria-hidden="true">
