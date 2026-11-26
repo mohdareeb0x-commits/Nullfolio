@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import { clsx } from "clsx";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import Preloader from "@/components/Preloader";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 
 const space = Space_Grotesk({
   subsets: ["latin"],
@@ -71,7 +74,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
+        <SmoothScrollProvider>
+          <Preloader />
+          <ScrollProgressBar />
+          {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   );

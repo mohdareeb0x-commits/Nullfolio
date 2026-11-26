@@ -1,10 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0C0D0E"/>
-      <stop offset="100%" style="stop-color:#161719"/>
+    <linearGradient id="accent" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D4FF00"/>
+      <stop offset="100%" stop-color="#A8D000"/>
     </linearGradient>
   </defs>
-  <rect width="100" height="100" rx="8" fill="url(#bg)"/>
-  <text x="50" y="72" font-family="system-ui, sans-serif" font-size="50" font-weight="700" fill="#D97706" text-anchor="middle" letter-spacing="-2">NF</text>
+  <!-- Rounded square background -->
+  <rect x="2" y="2" width="28" height="28" rx="6" fill="#0A0A0B"/>
+  <!-- Subtle border -->
+  <rect x="2" y="2" width="28" height="28" rx="6" stroke="#2A2A32" stroke-width="0.5" fill="none"/>
+
+  <!-- Logo mark: Stylized null/empty set symbol with code bracket fusion -->
+  <g transform="translate(16, 16)">
+    <!-- Outer rounded square frame (code block suggestion) -->
+    <rect x="-10" y="-10" width="20" height="20" rx="3" stroke="url(#accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Null/empty set symbol: circle with diagonal slash -->
+    <circle r="7" stroke="url(#accent)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <line x1="-7" y1="-7" x2="7" y2="7" stroke="url(#accent)" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Code bracket accents at corners (subtle) -->
+    <g stroke="url(#accent)" stroke-width="1.5" stroke-linecap="round" opacity="0.6">
+      <!-- Top-left bracket -->
+      <path d="M-9 -9 h3 M-9 -9 v3"/>
+      <!-- Top-right bracket -->
+      <path d="M6 -9 h-3 M9 -9 v3"/>
+      <!-- Bottom-left bracket -->
+      <path d="M-9 6 h3 M-9 9 v-3"/>
+      <!-- Bottom-right bracket -->
+      <path d="M6 9 h-3 M9 9 v-3"/>
+    </g>
+  </g>
 </svg>

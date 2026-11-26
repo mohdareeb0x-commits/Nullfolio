@@ -1,10 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WorkProcess from "@/components/WorkProcess";
+import SkillsWall from "@/components/SkillsWall";
 import Image from "next/image";
 import fs from "fs/promises";
 import path from "path";
-import { ArrowRight, Code2, Layers, Server, Smartphone } from "lucide-react";
 import Link from "next/link";
+import { ArrowUpRight, MousePointer } from "lucide-react";
 
 interface Project {
   id: string;
@@ -27,27 +29,12 @@ async function getFeaturedProjects(): Promise<Project[]> {
   }
 }
 
-const focusAreas = [
-  {
-    icon: Server,
-    title: "Backend Systems",
-    desc: "Go, Python, PostgreSQL, MongoDB — scalable APIs and data infrastructure",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile & Web",
-    desc: "React Native, Expo, Next.js — cross-platform applications",
-  },
-  {
-    icon: Layers,
-    title: "Cloud & DevOps",
-    desc: "Docker, CI/CD, cloud-native deployment pipelines",
-  },
-  {
-    icon: Code2,
-    title: "Open Source",
-    desc: "Contributing to tooling and libraries I depend on",
-  },
+const marqueeItems = [
+  "Backend Systems",
+  "API Architecture",
+  "Cloud & DevOps",
+  "Mobile Apps",
+  "Full-Stack Engineering",
 ];
 
 export default async function Page() {
@@ -56,146 +43,300 @@ export default async function Page() {
   return (
     <>
       <Header />
-      <main className="min-h-screen pt-32 pb-20 px-6">
-        <div className="mx-auto max-w-6xl">
+      <main className="bg-background min-h-screen">
+        <div className="container">
           {/* Hero Section */}
-          <section className="grid md:grid-cols-[1fr_400px] gap-16 items-start mb-24">
-            <div className="max-w-2xl pt-4">
-              <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight mb-8">
-                Mohd Areeb
-              </h1>
-              <p className="text-xl text-muted leading-relaxed mb-12 max-w-xl">
-                I'm Mohd Areeb, an independent web developer helping digital marketing agencies and businesses build high-performing websites, conversion-focused landing pages, and custom web solutions. I specialize in modern web technologies, marketing integrations, CRM automation, and reliable white-label development support.
-              </p>
-              <div className="flex items-center gap-4">
-                <Link
-                  href="/projects"
-                  className="px-6 py-3 bg-accent text-white font-medium rounded-sm hover:bg-accentHover transition-colors"
-                >
-                  View Projects
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-6 py-3 border border-border text-foreground font-medium rounded-sm hover:bg-surface transition-colors"
-                >
-                  Contact
-                </Link>
-              </div>
-            </div>
+          <section className="relative pt-20 pb-20 md:pt-32 md:pb-32 lg:pt-40 lg:pb-40 overflow-hidden">
+            {/* Subtle radial glow behind headline */}
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] rounded-full bg-[#d4ff00]/5 blur-[120px] pointer-events-none" aria-hidden="true" />
 
-            <div className="relative w-full max-w-xs md:ml-auto">
-              <div className="aspect-square relative overflow-hidden rounded-sm border border-border bg-surface">
-                <Image
-                  src="/profile.jpg"
-                  alt="Mohd Areeb"
-                  fill
-                  priority
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                  sizes="(max-width: 768px) 100vw, 400px"
-                />
-              </div>
-            </div>
-          </section>
+            <div className="relative grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+              {/* Left: Headline + Meta */}
+              <div className="lg:col-span-7 lg:col-start-1 z-10">
+                {/* Section tag */}
+                <div className="flex items-center gap-3 mb-8 md:mb-12">
+                  <span className="font-mono text-body-xs text-muted">01</span>
+                  <span className="h-px w-24 bg-border-subtle" aria-hidden="true" />
+                  <span className="font-mono text-body-xs text-muted">Hero</span>
+                </div>
 
-          {/* Focus Areas */}
-          <section className="mb-24 pb-16 border-b border-border">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl w-full">
-              {focusAreas.map((area) => (
-                <div key={area.title} className="group p-6 bg-surface border border-border hover:border-accentHover transition-colors duration-200">
-                  <div className="text-accent mb-4 group-hover:scale-110 transition-transform duration-200">
-                    <area.icon size={24} strokeWidth={1.5} />
+                {/* Headline with masked reveal */}
+                <h1 className="font-display headline-1 text-foreground mb-8 md:mb-12">
+                  <span className="reveal-up">Building</span>
+                  <br />
+                  <span className="reveal-up delay-1"><span className="font-accent text-accent">robust</span></span>
+                  <br />
+                  <span className="reveal-up delay-2">systems for</span>
+                  <br />
+                  <span className="reveal-up delay-3">modern agencies.</span>
+                </h1>
+
+                {/* Subtitle */}
+                <p className="body-lg text-muted max-w-xl mb-10 md:mb-16 reveal-up delay-4">
+                  Mohd Areeb. Independent full-stack developer focused on scalable
+                  backends, API architecture, and high-performance digital experiences.
+                </p>
+
+                {/* CTA group */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 reveal-up delay-5">
+                  <Link href="/projects" className="btn btn-primary">
+                    View Work
+                    <ArrowUpRight size={16} />
+                  </Link>
+                  <Link href="/contact" className="btn btn-secondary">
+                    Get in Touch
+                  </Link>
+                </div>
+
+                {/* Scroll cue */}
+                <div className="mt-16 flex items-center gap-3 text-muted opacity-60 reveal-up delay-6" aria-hidden="true">
+                  <MousePointer size={20} className="animate-bounce" />
+                  <span className="font-mono text-body-xs uppercase tracking-widest">Scroll</span>
+                </div>
+              </div>
+
+              {/* Right: Portrait Frame */}
+              <div className="lg:col-span-5 lg:col-start-8 relative z-10 reveal-up delay-3">
+                <div className="relative aspect-[3/4] max-w-xs mx-auto lg:mx-0">
+                  {/* Portrait with grayscale + duotone treatment */}
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden bg-surface border border-border">
+                    <Image
+                      src="/profile.jpg"
+                      alt="Mohd Areeb"
+                      fill
+                      priority
+                      className="object-cover grayscale contrast-110 transition-all duration-700 hover:grayscale-0 hover:contrast-100"
+                      sizes="(max-width: 1024px) 100vw, 320px"
+                    />
+                    {/* Accent overlay on hover - subtle */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   </div>
-                  <h3 className="font-heading text-lg font-semibold mb-2">{area.title}</h3>
-                  <p className="text-sm text-muted leading-relaxed">{area.desc}</p>
+
+                  {/* Corner brackets - subtle */}
+                  <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-accent/30 pointer-events-none" aria-hidden="true" />
+                  <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-accent/30 pointer-events-none" aria-hidden="true" />
+                  <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-accent/30 pointer-events-none" aria-hidden="true" />
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-accent/30 pointer-events-none" aria-hidden="true" />
                 </div>
-              ))}
+              </div>
             </div>
           </section>
 
-          {/* Featured Projects Preview */}
-          {featuredProjects.length > 0 && (
-            <section className="mb-16">
-              <div className="flex items-end justify-between mb-10">
-                <div>
-                  <h2 className="font-heading text-3xl font-bold tracking-tight">
-                    Recent Work
-                  </h2>
-                  <p className="text-muted mt-1">
-                    Selected projects demonstrating breadth across the stack
-                  </p>
-                </div>
-                <Link
-                  href="/projects"
-                  className="text-sm font-medium text-accent hover:text-accentHover transition-colors flex items-center gap-1"
-                >
-                  View all <ArrowRight size={16} />
-                </Link>
-              </div>
-
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {featuredProjects.map((project, index) => (
-                  <Link
-                    key={project.id}
-                    href={`/projects#${project.id}`}
-                    className="group flex flex-col bg-surface border border-border hover:border-accentHover transition-colors duration-200"
-                    style={{ textDecoration: "none", color: "inherit" }}
+          {/* Marquee Ticker */}
+          <section className="py-12 border-y border-border-subtle overflow-hidden relative">
+            <div className="relative z-10">
+              <div className="marquee-track flex gap-16 whitespace-nowrap">
+                {marqueeItems.map((item, i) => (
+                  <span
+                    key={i}
+                    className="font-display text-display-4 font-bold uppercase tracking-tight whitespace-nowrap flex items-center gap-6"
+                    style={{
+                      color: i % 2 === 0 ? "var(--foreground)" : "transparent",
+                      WebkitTextStroke: i % 2 === 0 ? "0 transparent" : "1px var(--foreground)",
+                    }}
                   >
-                    <div className="aspect-video relative overflow-hidden">
-                      {project.image ? (
+                    {item}
+                    <span className="text-muted font-mono text-body-xs">•</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+            {/* Accent highlight line */}
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent pointer-events-none" aria-hidden="true" />
+          </section>
+
+          <WorkProcess />
+
+          {/* Featured Projects */}
+          <section className="py-5xl relative">
+            <div className="flex items-end justify-between mb-5xl">
+              <div className="flex items-baseline gap-4">
+                <span className="font-mono text-accent">02</span>
+                <h2 className="font-display headline-3 text-foreground">
+                  (Selected Work)
+                </h2>
+              </div>
+              <Link
+                href="/projects"
+                className="btn btn-ghost text-sm hidden md:inline-flex"
+              >
+                View All Projects
+                <ArrowUpRight size={14} />
+              </Link>
+            </div>
+
+            {featuredProjects.length > 0 && (
+              <>
+                {/* Featured: First project full width */}
+                <article className="mb-4xl group relative">
+                  <div className="grid lg:grid-cols-12 gap-8 items-start">
+                    <div className="lg:col-span-7 relative aspect-[16/9] img-frame group">
+                      {featuredProjects[0].image && (
                         <Image
-                          src={project.image}
-                          alt={project.title}
+                          src={featuredProjects[0].image}
+                          alt={featuredProjects[0].title}
                           fill
-                          className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                          sizes="(max-width: 1024px) 100vw, 33vw"
+                          priority
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 58vw"
                         />
-                      ) : (
-                        <div className="w-full h-full bg-border flex items-center justify-center text-muted text-sm">
-                          No preview
-                        </div>
                       )}
+                      {/* Project type badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="font-mono text-body-xs px-3 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-accent">
+                          Client Work
+                        </span>
+                      </div>
+                      {/* Number */}
+                      <div className="absolute bottom-4 right-4 font-display text-6xl font-bold text-foreground/5" aria-hidden="true">
+                        01
+                      </div>
                     </div>
-                    <div className="p-5 space-y-3">
-                      <h3 className="font-heading text-xl font-semibold group-hover:text-accent transition-colors">
-                        {project.title}
+                    <div className="lg:col-span-5 space-y-6 pt-4 lg:pt-0">
+                      <span className="font-mono text-body-xs text-accent">01</span>
+                      <h3 className="font-display headline-4 text-foreground">
+                        {featuredProjects[0].title}
                       </h3>
-                      <p className="text-muted text-sm line-clamp-2 leading-relaxed">
-                        {project.description}
+                      <p className="body-lg text-muted leading-relaxed">
+                        {featuredProjects[0].description}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {project.techStack.slice(0, 5).map((tech) => (
+                        {featuredProjects[0].techStack.slice(0, 4).map((tech) => (
                           <span
                             key={tech}
-                            className="px-2 py-0.5 bg-background border border-border text-[10px] uppercase tracking-wider font-semibold text-muted"
+                            className="px-3 py-1 rounded-full border border-border bg-surface text-body-xs uppercase tracking-widest font-medium text-foreground"
                           >
                             {tech}
                           </span>
                         ))}
                       </div>
+                      <div className="flex items-center gap-4 pt-4 border-t border-border-subtle">
+                        {featuredProjects[0].liveLink && (
+                          <a
+                            href={featuredProjects[0].liveLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-ghost text-sm"
+                          >
+                            <span>Live Demo</span>
+                            <ArrowUpRight size={14} />
+                          </a>
+                        )}
+                        {featuredProjects[0].githubLink && (
+                          <a
+                            href={featuredProjects[0].githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-ghost text-sm"
+                          >
+                            Source Code
+                          </a>
+                        )}
+                      </div>
                     </div>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
+                  </div>
+                </article>
 
-          {/* Closing / CTA */}
-          <section className="bg-surface border border-border p-8 md:p-12">
-            <div className="max-w-2xl">
-              <h2 className="font-heading text-2xl md:text-3xl font-bold tracking-tight mb-4">
-                Currently open to interesting problems
+                {/* Remaining projects: two column */}
+                <div className="grid md:grid-cols-2 gap-8">
+                  {featuredProjects.slice(1).map((project, index) => (
+                    <article
+                      key={project.id}
+                      className="group card p-6 md:p-8 relative overflow-hidden"
+                    >
+                      <div className="relative aspect-video img-frame mb-6">
+                        {project.image && (
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        )}
+                        <div className="absolute top-3 left-3">
+                          <span className="font-mono text-body-xs px-2 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-muted">
+                            {index === 0 ? "Client Work" : "Personal"}
+                          </span>
+                        </div>
+                        <div className="absolute bottom-3 right-3 font-display text-4xl font-bold text-foreground/5" aria-hidden="true">
+                          0{index + 2}
+                        </div>
+                      </div>
+                      <div className="space-y-4">
+                        <span className="font-mono text-body-xs text-accent">0{index + 2}</span>
+                        <h3 className="font-display text-2xl font-bold text-foreground group-hover:text-accent transition-colors">
+                          {project.title}
+                        </h3>
+                        <p className="body-sm text-muted line-clamp-3 leading-relaxed">
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.techStack.slice(0, 3).map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-2 py-1 rounded-full border border-border bg-surface text-body-xs uppercase tracking-widest font-medium text-muted"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="flex items-center gap-3 pt-3 border-t border-border-subtle">
+                          {project.liveLink && (
+                            <a
+                              href={project.liveLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-ghost text-xs"
+                            >
+                              Live Demo
+                              <ArrowUpRight size={12} />
+                            </a>
+                          )}
+                          {project.githubLink && (
+                            <a
+                              href={project.githubLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-ghost text-xs"
+                            >
+                              Source
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </>
+            )}
+          </section>
+
+          <SkillsWall />
+
+          {/* CTA Footer */}
+          <section className="relative py-5xl border-t border-border-subtle overflow-hidden">
+            {/* Subtle glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[50rem] h-[30rem] rounded-full bg-[#d4ff00]/3 blur-[100px] pointer-events-none" aria-hidden="true" />
+
+            <div className="relative z-10 text-center max-w-3xl mx-auto">
+              <h2 className="font-display headline-1 text-foreground mb-8 md:mb-12">
+                Let's work <br />
+                <span className="font-accent text-accent">together</span>.
               </h2>
-              <p className="text-muted leading-relaxed mb-8">
-                Whether it's designing a scalable backend, crafting a polished
-                mobile experience, or untangling legacy systems — I enjoy the
-                craft of building things that last.
+              <p className="body-lg text-muted mb-12 max-w-xl mx-auto">
+                I'm currently open to new projects, freelance engagements, and interesting problems.
               </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white font-medium rounded-sm hover:bg-accentHover transition-colors text-sm"
+              <a
+                href="mailto:areeb.nullfolio@gmail.com"
+                className="btn btn-primary text-lg px-10 py-5 inline-block"
               >
-                Let's talk
-              </Link>
+                areeb.nullfolio@gmail.com
+                <ArrowUpRight size={20} />
+              </a>
+              <p className="mt-8 font-mono text-body-xs text-muted max-w-xs mx-auto">
+                "I reply to every email. Eventually."
+              </p>
             </div>
           </section>
         </div>

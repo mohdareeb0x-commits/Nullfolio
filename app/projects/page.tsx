@@ -31,97 +31,195 @@ async function getProjects(): Promise<Project[]> {
   }
 }
 
+const projectTypes: Record<string, "Client Work" | "Personal" | "Open Source"> = {
+  "1794762679365": "Client Work",
+  "1794999400510": "Client Work",
+  "1795455502752": "Client Work",
+  "1795537138575": "Client Work",
+  "1795615840221": "Client Work",
+};
+
 export default async function ProjectsPage() {
   const projects = await getProjects();
 
   return (
     <>
       <Header />
-      <main className="min-h-screen pt-32 pb-20 px-6">
-        <div className="mx-auto max-w-6xl">
-          <header className="max-w-2xl mb-20">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              Projects
+      <main className="bg-background min-h-screen">
+        <div className="container">
+          <header className="py-5xl border-b border-border-subtle">
+            <h1 className="font-display headline-1 text-foreground mb-4">
+              Projects<span className="text-accent">.</span>
             </h1>
-            <p className="text-lg text-muted leading-relaxed">
-              A selected showcase of my work, focusing on robust backends,
-              scalable architectures, and clean, functional interfaces.
+            <p className="body-lg text-muted max-w-2xl">
+              Selected showcase of robust backends, scalable architectures, and functional interfaces.
             </p>
           </header>
 
-          <div className="grid gap-16">
+          <section className="py-5xl">
             {projects.length > 0 ? (
-              projects.map((project, index) => (
-                <section
-                  key={project.id}
-                  className={`flex flex-col ${
-                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  } gap-8 md:gap-16 items-start`}
-                >
-                  <div className="flex-1 w-full group overflow-hidden border border-border bg-surface">
-                    {project.image ? (
-                      <div className="aspect-video relative overflow-hidden">
+              <>
+                {/* Featured: First project full width */}
+                <article className="mb-5xl group relative">
+                  <div className="grid lg:grid-cols-12 gap-8 items-start">
+                    <div className="lg:col-span-7 relative aspect-[16/9] img-frame group">
+                      {projects[0].image && (
                         <Image
-                          src={project.image}
-                          alt={project.title}
+                          src={projects[0].image}
+                          alt={projects[0].title}
                           fill
-                          className="object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
-                          sizes="(max-width: 768px) 100vw, 50vw"
+                          priority
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 58vw"
                         />
-                      </div>
-                    ) : (
-                      <div className="aspect-video bg-border flex items-center justify-center">
-                        <span className="text-muted text-sm">No preview available</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="flex-1 space-y-6">
-                    <h2 className="font-heading text-2xl md:text-3xl font-bold">
-                      {project.title}
-                    </h2>
-                    <p className="text-muted leading-relaxed">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.techStack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-surface border border-border text-[10px] uppercase tracking-wider font-semibold text-muted"
-                        >
-                          {tech}
+                      )}
+                      <div className="absolute top-4 left-4">
+                        <span className="font-mono text-body-xs px-3 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-accent">
+                          {projectTypes[projects[0].id] || "Project"}
                         </span>
-                      ))}
+                      </div>
+                      <div className="absolute bottom-4 right-4 font-display text-6xl font-bold text-foreground/5" aria-hidden="true">
+                        01
+                      </div>
                     </div>
-                    <div className="flex items-center gap-6 pt-4">
-                      {project.liveLink && (
-                        <a
-                          href={project.liveLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors"
-                        >
-                          <ExternalLink size={16} /> Live Demo
-                        </a>
-                      )}
-                      {project.githubLink && (
-                        <a
-                          href={project.githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors"
-                        >
-                          <Github size={16} /> Source Code
-                        </a>
-                      )}
+                    <div className="lg:col-span-5 space-y-6 pt-4 lg:pt-0">
+                      <span className="font-mono text-body-xs text-accent">01</span>
+                      <h2 className="font-display headline-3 text-foreground">
+                        {projects[0].title}
+                      </h2>
+                      <p className="body-lg text-muted leading-relaxed">
+                        {projects[0].description}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {projects[0].techStack.slice(0, 6).map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1.5 rounded-lg border border-border bg-surface text-body-xs uppercase tracking-widest font-medium text-foreground"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center gap-4 pt-6 border-t border-border-subtle">
+                        {projects[0].liveLink && (
+                          <a
+                            href={projects[0].liveLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-ghost text-sm"
+                          >
+                            <ExternalLink size={14} />
+                            <span>Live Demo</span>
+                          </a>
+                        )}
+                        {projects[0].githubLink && (
+                          <a
+                            href={projects[0].githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-ghost text-sm"
+                          >
+                            <Github size={14} />
+                            <span>Source Code</span>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </section>
-              ))
+                </article>
+
+                {/* Remaining projects: alternating two-column */}
+                <div className="space-y-5xl">
+                  {projects.slice(1).map((project, index) => {
+                    const isEven = index % 2 === 0;
+                    return (
+                      <article
+                        key={project.id}
+                        className={`group relative grid lg:grid-cols-12 gap-8 items-start ${
+                          isEven ? "" : "lg:[grid-template-areas:_'image_content']"
+                        }`}
+                      >
+                        <div
+                          className={`relative aspect-[16/9] img-frame group ${
+                            isEven ? "lg:col-span-7 lg:col-start-1" : "lg:col-span-7 lg:col-start-6"
+                          }`}
+                        >
+                          {project.image && (
+                            <Image
+                              src={project.image}
+                              alt={project.title}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 1024px) 100vw, 58vw"
+                            />
+                          )}
+                          <div className="absolute top-4 left-4">
+                            <span className="font-mono text-body-xs px-3 py-1 bg-background/90 backdrop-blur-sm border border-border rounded-full text-muted">
+                              {projectTypes[project.id] || "Project"}
+                            </span>
+                          </div>
+                          <div className="absolute bottom-4 right-4 font-display text-6xl font-bold text-foreground/5" aria-hidden="true">
+                            0{index + 2}
+                          </div>
+                        </div>
+                        <div
+                          className={`space-y-6 pt-4 lg:pt-0 ${
+                            isEven ? "lg:col-span-5 lg:col-start-6" : "lg:col-span-5 lg:col-start-1"
+                          }`}
+                        >
+                          <span className="font-mono text-body-xs text-accent">0{index + 2}</span>
+                          <h2 className="font-display headline-4 text-foreground">
+                            {project.title}
+                          </h2>
+                          <p className="body-lg text-muted leading-relaxed">
+                            {project.description}
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            {project.techStack.slice(0, 6).map((tech) => (
+                              <span
+                                key={tech}
+                                className="px-3 py-1.5 rounded-lg border border-border bg-surface text-body-xs uppercase tracking-widest font-medium text-foreground"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                          <div className="flex items-center gap-4 pt-6 border-t border-border-subtle">
+                            {project.liveLink && (
+                              <a
+                                href={project.liveLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-ghost text-sm"
+                              >
+                                <ExternalLink size={14} />
+                                <span>Live Demo</span>
+                              </a>
+                            )}
+                            {project.githubLink && (
+                              <a
+                                href={project.githubLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-ghost text-sm"
+                              >
+                                <Github size={14} />
+                                <span>Source Code</span>
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      </article>
+                    );
+                  })}
+                </div>
+              </>
             ) : (
-              <p className="text-muted italic">No projects added yet.</p>
+              <div className="py-5xl text-center">
+                <p className="text-muted italic">No projects added yet.</p>
+              </div>
             )}
-          </div>
+          </section>
         </div>
       </main>
       <Footer />

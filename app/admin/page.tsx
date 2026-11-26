@@ -1,6 +1,9 @@
 import { headers } from "next/headers";
 import dynamic from "next/dynamic";
 
+export const dynamicParams = true;
+export const revalidate = 0;
+
 const AdminPanelClient = dynamic(
   async () => {
     const { default: AdminPanel } = await import("./AdminPanelClient");
